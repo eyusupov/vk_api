@@ -75,8 +75,8 @@ class VkAudio(object):
         }
     ]
 
-    def __init__(self, vk, convert_m3u8_links=True):
-        self.user_id = vk.method('users.get')[0]['id']
+    def __init__(self, vk, convert_m3u8_links=True, user_id=None):
+        self.user_id = vk.method('users.get')[0]['id'] if user_id is None else user_id
         self._vk = vk
         self.convert_m3u8_links = convert_m3u8_links
 
